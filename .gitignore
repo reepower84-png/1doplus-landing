@@ -48,3 +48,6 @@ inquiries.db
 
 # windows special files
 nul
+
+.vercel
+.env*.local

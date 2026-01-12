@@ -10,9 +10,9 @@ export default function Footer() {
             <Image
               src="/로고_최종-removebg-preview.png"
               alt="1도플러스"
-              width={150}
-              height={50}
-              className="h-10 w-auto mb-4 brightness-0 invert"
+              width={300}
+              height={100}
+              className="h-20 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-gray-400 mb-4">
               20년 전통의 기술력으로 만든<br />
