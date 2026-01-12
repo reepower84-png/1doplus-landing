@@ -12,7 +12,7 @@ export default function Footer() {
               alt="1도플러스"
               width={300}
               height={100}
-              className="h-20 w-auto mb-4 brightness-0 invert"
+              className="h-20 w-auto mb-4"
             />
             <p className="text-gray-400 mb-4">
               20년 전통의 기술력으로 만든<br />
