@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -5,7 +7,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold gradient-text mb-4">1도플러스</h3>
+            <Image
+              src="/로고_최종-removebg-preview.png"
+              alt="1도플러스"
+              width={150}
+              height={50}
+              className="h-10 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-gray-400 mb-4">
               20년 전통의 기술력으로 만든<br />
               프리미엄 전기매트 & 건강사우나 전문 제조업체

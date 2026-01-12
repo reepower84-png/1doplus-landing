@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import CTAButton from './CTAButton';
 
 export default function Header() {
@@ -22,9 +23,15 @@ export default function Header() {
           <div className="flex items-center">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-xl md:text-2xl font-bold gradient-text cursor-pointer"
+              className="cursor-pointer"
             >
-              1도플러스
+              <Image
+                src="/로고_최종-removebg-preview.png"
+                alt="1도플러스"
+                width={120}
+                height={40}
+                className="h-8 md:h-10 w-auto"
+              />
             </button>
           </div>
 
