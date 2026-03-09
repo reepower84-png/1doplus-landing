@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createInquiry } from '@/lib/supabase';
 
 async function sendDiscordNotification(name: string, phone: string, message: string): Promise<boolean> {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
@@ -103,18 +102,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const inquiry = await createInquiry(name, phone, message || '');
+    // Discord로 직접 알림 전송
+    const discordSuccess = await sendDiscordNotification(name, phone, message || '');
 
-    // Discord로 알림 전송 (await로 완료까지 대기)
-    try {
-      const discordSuccess = await sendDiscordNotification(name, phone, message || '');
-      console.log('[API] Discord 알림 전송 결과:', discordSuccess);
-    } catch (discordError) {
-      console.error('[API] Discord 알림 전송 중 오류:', discordError);
+    if (!discordSuccess) {
+      return NextResponse.json(
+        { error: '알림 전송에 실패했습니다. 잠시 후 다시 시도해주세요.' },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json(
-      { message: '문의가 성공적으로 접수되었습니다.', inquiry },
+      { message: '문의가 성공적으로 접수되었습니다.' },
       { status: 201 }
     );
   } catch (error) {
