@@ -193,6 +193,18 @@ export default function ContactForm() {
                 {isSubmitting ? '접수 중...' : '무료 상담 신청하기'}
               </button>
 
+              <a
+                href="http://pf.kakao.com/_NCBad/chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#FEE500] text-[#3C1E1E] font-bold py-4 rounded-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.65 6.76-.2.74-.73 2.7-.84 3.12-.13.52.19.51.4.37.16-.11 2.6-1.77 3.65-2.49.7.1 1.41.16 2.14.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z" />
+                </svg>
+                카카오톡으로 상담하기
+              </a>
+
               <p className="text-xs text-gray-500 text-center">
                 입력하신 정보는 상담 목적으로만 사용됩니다.
               </p>
